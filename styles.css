@@ -1,0 +1,136 @@
+@import url("https://use.typekit.net/zga2osr.css");
+
+:root {
+  --main-bg: white;
+  --shadow: rgba(0, 0, 0, 0.75);
+  --page-bg: #d6d6d6;
+  --txt-clr: black;
+  --txt-spc: rgb(190, 164, 13);
+  --font: big-caslon-fb, serif;
+}
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: var(--font);
+  font-weight: 400;
+  font-style: normal;
+}
+
+@media screen and (min-width: 768px) {
+  html {
+    background-color: var(--main-bg);
+    color: var(--txt-clr);
+  }
+  body {
+    display: grid;
+    grid-template-columns: [side-left]15em [magazine-page]auto [side-right]15em;
+  }
+  #theme-changer {
+    margin: 0 auto;
+    grid-column: magazine-page;
+    padding-top: 50px;
+  }
+  #theme {
+    background-color: var(--page-bg);
+    color: var(--txt-spc);
+    padding: 5px;
+    border: none;
+    border-radius: 5%;
+  }
+  div#page {
+    padding: 50px;
+    background-color: var(--page-bg);
+    grid-column: magazine-page;
+    display: grid;
+    grid-template-areas:
+      "header"
+      "main";
+    box-shadow: 10px 10px 5px 0px var(--shadow);
+    margin: 50px 0;
+  }
+  header {
+    grid-area: header;
+    display: grid;
+    grid-template-columns: [first] 40% [second] 40%;
+    grid-template-rows: [small-row] 100px [heading-row] 150px;
+    grid-column-gap: 20%;
+    margin-bottom: 40px;
+  }
+
+  small.right {
+    text-align: right;
+  }
+  small.left {
+    text-align: left;
+  }
+
+  main {
+    grid-area: main;
+    display: grid;
+    grid-gap: 1vw;
+    grid-template-columns: [First] 4fr [mid] 3fr [last]3fr;
+    grid-template-rows: [topOne] auto [midOne] 1fr [last] 2fr;
+  }
+  .container1 {
+    grid-column: First;
+    grid-row: topOne;
+  }
+  article.first {
+    grid-column: mid / -1;
+    grid-row: topOne;
+    padding-right: 4vw;
+  }
+  p.main {
+    grid-column: First;
+    grid-row: midOne / -1;
+    text-align: justify;
+    text-justify: inter-word;
+  }
+  div.group {
+    grid-column: last / -1;
+    grid-row: last;
+    text-align: justify;
+    text-justify: inter-word;
+  }
+  div.container2 {
+    grid-column: mid / -1;
+    grid-row: midOne/ last;
+  }
+  div.container3 {
+    grid-column: mid / last;
+    grid-row: last;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  h1 {
+    font-size: 3.4vw;
+    font-weight: bolder;
+  }
+
+  p.main::first-letter {
+    font-size: 4vw;
+    font-weight: bold;
+    float: left;
+    margin-right: 0.5em;
+  }
+
+  p {
+    font-size: 1.5vw;
+  }
+  small {
+    font-size: 1.4vw;
+  }
+  .intro1,
+  .intro2 {
+    font-size: 2.4vw;
+    font-weight: bold;
+  }
+
+  .intro1 {
+    color: var(--txt-spc);
+  }
+}
